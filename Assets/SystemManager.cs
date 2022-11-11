@@ -14,7 +14,7 @@ public class SystemManager : MonoBehaviour
 
     GameObject loadPartyDropDown;
 
-    GameObject characterStatsTemplate;
+    //GameObject characterStatsTemplate;
 
     LinkedList<GameObject> partyCharacters;
 
@@ -48,8 +48,8 @@ public class SystemManager : MonoBehaviour
                 rerollButton = (GameObject)go;
             else if (go.name == "PartyNameInputField")
                 partyNameInputField = (GameObject)go;
-            else if (go.name == "CharacterStatsDisplayContainer")
-                characterStatsTemplate = (GameObject)go;
+            //else if (go.name == "CharacterStatsDisplayContainer")
+            //    characterStatsTemplate = (GameObject)go;
             else if (go.name == "LoadPartyDropdown")
                 loadPartyDropDown = (GameObject)go;
             else if (go.name == "SaveButton2")
@@ -60,7 +60,7 @@ public class SystemManager : MonoBehaviour
                 deleteButton = (GameObject)go;
         }
 
-        characterStatsTemplate.SetActive(false);
+       // characterStatsTemplate.SetActive(false);
 
         saveButton.GetComponent<Button>().onClick.AddListener(SaveButtonPressed);
         loadButton.GetComponent<Button>().onClick.AddListener(LoadButtonPressed);
@@ -149,11 +149,11 @@ public class SystemManager : MonoBehaviour
                 float pos = -((float)GameContent.partyCharacters.Count / 2f - 0.5f);
                 foreach (PartyCharacter pc in GameContent.partyCharacters)
                 {
-                    GameObject go = Instantiate(characterStatsTemplate, characterStatsTemplate.transform.parent);
-                    go.SetActive(true);
-                    go.GetComponent<RectTransform>().position = go.GetComponent<RectTransform>().localPosition = new Vector3(Screen.width / 2 + (pos * ((float)Screen.width / (float)GameContent.partyCharacters.Count)), Screen.height / 2 + 30, 0);
+                   // GameObject go = Instantiate(characterStatsTemplate, characterStatsTemplate.transform.parent);
+                   // go.SetActive(true);
+                   // go.GetComponent<RectTransform>().position = go.GetComponent<RectTransform>().localPosition = new Vector3(Screen.width / 2 + (pos * ((float)Screen.width / (float)GameContent.partyCharacters.Count)), Screen.height / 2 + 30, 0);
                     pos++;
-                    partyCharacters.AddLast(go);
+                  //  partyCharacters.AddLast(go);
 
                     string info = GameContent.CharacterClassID.lookUp[pc.classID] + "\n" +
                         "HP: " + pc.health + "\n" +
@@ -167,9 +167,9 @@ public class SystemManager : MonoBehaviour
                         info = info + "\n" + GameContent.EquipmentID.lookUp[equipID];
                     }
 
-                    go.GetComponentInChildren<Text>().text = info;
+                //    go.GetComponentInChildren<Text>().text = info;
 
-                    go.GetComponentInChildren<Image>().sprite = spriteLookUp[pc.classID];
+                 //   go.GetComponentInChildren<Image>().sprite = spriteLookUp[pc.classID];
                 }
             }
         }

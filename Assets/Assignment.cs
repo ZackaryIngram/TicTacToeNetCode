@@ -368,9 +368,9 @@ class CharacterData
     }
 
     public void Saving()
-    {  
+    {
         StreamWriter sw = new StreamWriter("A2Data.txt");
-      
+
         foreach (PartyCharacter pc in GameContent.partyCharacters)
         {
             sw.WriteLine(AssignmentPart2.CharacterSaveSignifier + pc.classID);
@@ -387,7 +387,7 @@ class CharacterData
 
         }
 
-        sw.Close();      
+        sw.Close();
     }
 
     public void Loading()
@@ -416,12 +416,12 @@ class CharacterData
                         * 6: Wisdom
                        */
                     PartyCharacter newChar = new PartyCharacter(
-                        int.Parse(csv[1]), 
-                        int.Parse(csv[2]), 
-                        int.Parse(csv[3]), 
-                        int.Parse(csv[4]), 
-                        int.Parse(csv[5]), 
-                        int.Parse(csv[6])  
+                        int.Parse(csv[1]),
+                        int.Parse(csv[2]),
+                        int.Parse(csv[3]),
+                        int.Parse(csv[4]),
+                        int.Parse(csv[5]),
+                        int.Parse(csv[6])
                         );
                     GameContent.partyCharacters.AddLast(newChar);
                 }
