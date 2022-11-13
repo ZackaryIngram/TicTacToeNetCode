@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/LoginScene.unity
+    guid: 8cdbd6769cf14114296e6b3cdc03f429
+  - enabled: 1
+    path: Assets/Scenes/TicTacToeScene.unity
+    guid: 33c6e7002bf6cc64db6a678cc2d2d349
   m_configObjects: {}
